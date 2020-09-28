@@ -5,26 +5,32 @@
 def order(values: list = None) -> bool:
     if values is None:
         # TODO: Demander les valeurs ici
-        pass
+        values = [input("Entrez ...") for _ in range(10)] # compréhension de liste
 
-    return False
+    return values == sorted(values)     # ou == values.sort()
 
 
 def anagrams(words: list = None) -> bool:
+    liste1, liste2 = [], []
     if words is None:
-        # TODO: Demander les mots ici
-        pass
+        chaine1 = input('Entrez le premier mot : ')
+        chaine2 = input('Entrez le deuxième mot : ')
+        liste1, liste2 = sorted(list(chaine1)), sorted(list(chaine2))
 
-    return False
+    return liste1 == liste2
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    is_double = False
+    for element in items:
+        if items.count(element) > 0 :
+            is_double = True
+    return is_double
 
 
-def best_grades(student_grades: dict) -> dict:
+def best_grades(student_grades: dict) -> tuple:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    return {}
+    return nom, note
 
 
 def histogram(sentence: str) -> tuple:
@@ -47,17 +53,20 @@ def print_recipe(ingredients) -> None:
 
 def main() -> None:
     print(f"On essaie d'ordonner les valeurs...")
-    order()
+    print(f'Les valeurs sont ordonnées : {order()}')
 
     print(f"On vérifie les anagrammes...")
-    anagrams()
+    if anagrams() :
+        print(f'Les deux mots sont des anagrammes.')
+    else:
+        print('Les deux mots ne sont pas des anagrammes.')
 
     my_list = [3, 3, 5, 6, 1, 1]
     print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
 
-    grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
-    name, result = best_grades(grades)
-    print(f"{name} a la meilleure moyenne: {result}")
+    #grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
+    #name, result = best_grades(grades)
+    #print(f"{name} a la meilleure moyenne: {result}")
     
     print("On enregistre les recettes...")
     recipes = get_recipes()
