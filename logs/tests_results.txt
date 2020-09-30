@@ -1,20 +1,8 @@
 test_anagram (__main__.TestExercice) ... FAIL
 test_doubles (__main__.TestExercice) ... FAIL
-test_grades (__main__.TestExercice) ... ERROR
+test_grades (__main__.TestExercice) ... FAIL
 test_histogram (__main__.TestExercice) ... FAIL
 test_order (__main__.TestExercice) ... FAIL
-
-======================================================================
-ERROR: test_grades (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 63, in test_grades
-    output = [exercice.best_grades(v) for v in values]
-  File "test_exercice.py", line 63, in <listcomp>
-    output = [exercice.best_grades(v) for v in values]
-  File "/home/runner/work/c01_ch6_exercices-GenevievePMD/c01_ch6_exercices-GenevievePMD/exercice.py", line 33, in best_grades
-    return nom, note
-NameError: name 'nom' is not defined
 
 ======================================================================
 FAIL: test_anagram (__main__.TestExercice)
@@ -47,12 +35,20 @@ False
 + [False, True] : Erreur dans les doublons
 
 ======================================================================
+FAIL: test_grades (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 69, in test_grades
+    'Erreur dans les notes'
+AssertionError: [('Sam', 100.0)] is not an instance of <class 'dict'> : First argument is not a dictionary
+
+======================================================================
 FAIL: test_histogram (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "test_exercice.py", line 84, in test_histogram
     'Erreur dans les histogrammes'
-AssertionError: [({}, []), ({}, [])] is not an instance of <class 'dict'> : First argument is not a dictionary
+AssertionError: [({'B': 1, 'o': 4, 'n': 2, 'j': 2, 'u': 2, 'r': 2, ',': 1, ' ': 1, 'b': 1}, []), ({'J': 1, "'": 1, 'a': 6, 'd': 1, 'o': 4, 'r': 3, 'e': 7, ' ': 5, 'm': 2, 'n': 4, 'b': 1, 'c': 3, 'l': 3, 'u': 2, 't': 2, 'g': 2, 'i': 5, 'f': 1, 'q': 1, '/': 1}, ['a', 'e'])] is not an instance of <class 'dict'> : First argument is not a dictionary
 
 ======================================================================
 FAIL: test_order (__main__.TestExercice)
@@ -72,4 +68,4 @@ False
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
-FAILED (failures=4, errors=1)
+FAILED (failures=5)
