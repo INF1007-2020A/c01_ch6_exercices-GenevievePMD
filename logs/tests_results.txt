@@ -1,0 +1,75 @@
+test_anagram (__main__.TestExercice) ... FAIL
+test_doubles (__main__.TestExercice) ... FAIL
+test_grades (__main__.TestExercice) ... ERROR
+test_histogram (__main__.TestExercice) ... FAIL
+test_order (__main__.TestExercice) ... FAIL
+
+======================================================================
+ERROR: test_grades (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 63, in test_grades
+    output = [exercice.best_grades(v) for v in values]
+  File "test_exercice.py", line 63, in <listcomp>
+    output = [exercice.best_grades(v) for v in values]
+  File "/home/runner/work/c01_ch6_exercices-GenevievePMD/c01_ch6_exercices-GenevievePMD/exercice.py", line 33, in best_grades
+    return nom, note
+NameError: name 'nom' is not defined
+
+======================================================================
+FAIL: test_anagram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 40, in test_anagram
+    'Erreur dans la vérification de l\'anagramme'
+AssertionError: Lists differ: [True, True] != [True, False]
+
+First differing element 1:
+True
+False
+
+- [True, True]
++ [True, False] : Erreur dans la vérification de l'anagramme
+
+======================================================================
+FAIL: test_doubles (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 55, in test_doubles
+    'Erreur dans les doublons'
+AssertionError: Lists differ: [True, True] != [False, True]
+
+First differing element 0:
+True
+False
+
+- [True, True]
++ [False, True] : Erreur dans les doublons
+
+======================================================================
+FAIL: test_histogram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 84, in test_histogram
+    'Erreur dans les histogrammes'
+AssertionError: [({}, []), ({}, [])] is not an instance of <class 'dict'> : First argument is not a dictionary
+
+======================================================================
+FAIL: test_order (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 25, in test_order
+    'Mauvais ordre'
+AssertionError: Lists differ: [False, False] != [[-2, 1, 6, 9], ['2', 'a', 'hello']]
+
+First differing element 0:
+False
+[-2, 1, 6, 9]
+
+- [False, False]
++ [[-2, 1, 6, 9], ['2', 'a', 'hello']] : Mauvais ordre
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=4, errors=1)
